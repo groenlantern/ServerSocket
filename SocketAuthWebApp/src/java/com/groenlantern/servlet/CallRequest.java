@@ -1,6 +1,9 @@
 package com.groenlantern.servlet;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -30,7 +33,17 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
- *
+ * Web servlet that will process get and post request
+ * Extract required parameter data. 
+ * Build socket request
+ * Send Socket Request
+ * Read socket response back
+ * Format the XML response data received
+ * Output the socket response to the console
+ * Save the response to the README.txt file
+ * Servlet uses standard libraries available in JAVA 7
+ * Web application designed to run under the GlassFish Application Server
+ * 
  * @author Jean-Pierre Erasmus
  */
 @WebServlet("/CallRequestServlet")
@@ -130,12 +143,38 @@ public class CallRequest extends HttpServlet {
             System.out.println("Formatting Exception 3003 : " + responseMessage + " : " + ex.getMessage());
         }
 
+         //Write response
+        writeReadme(formattedResponse);
+            
         //Send response back to requesting page
         try (PrintWriter out = response.getWriter()) {
             out.println(formattedResponse);
         }
     }
 
+    /**
+     *
+     * @param responseToWrite
+     */
+    private static void writeReadme(String responseToWrite) {         
+        
+        //Create new Readme file with response
+        File outFile = new File("./README.txt");
+        
+        try (FileWriter filewriter = new FileWriter(outFile,false);                 
+             BufferedWriter buffwriter = new BufferedWriter(filewriter); ) {
+            
+            System.out.println("ReadMe.txt file output path : " + outFile.getCanonicalPath());
+            
+            //Output Response String to output
+            buffwriter.write(responseToWrite);
+            filewriter.flush();
+            buffwriter.flush();            
+        } catch (IOException e) {
+            System.out.println("Readme.txt Write Exception " + e.getMessage());            
+        }                
+    }
+    
     /**
      * Send server request and return response
      *

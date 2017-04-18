@@ -58,9 +58,9 @@ public class JavaXmlSocket {
 
         //Create socket connection and print request response
         try (
-                Socket echoSocket = new Socket("196.37.22.179", 9011);
-                PrintWriter out = new PrintWriter(echoSocket.getOutputStream(), true);
-                BufferedReader in = new BufferedReader(new InputStreamReader(echoSocket.getInputStream()));) {
+                Socket sendSocket = new Socket("196.37.22.179", 9011);
+                PrintWriter out = new PrintWriter(sendSocket.getOutputStream(), true);
+                BufferedReader in = new BufferedReader(new InputStreamReader(sendSocket.getInputStream()));) {
 
             //Send request
             out.println(xmlSocketAuthString);

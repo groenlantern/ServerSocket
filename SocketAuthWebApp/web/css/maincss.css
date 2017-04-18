@@ -1,4 +1,8 @@
-/*Main CSS class for Blue Label Assignment*/
+/*Main CSS class for Blue Label Assignment
+  CSS library containing all the classes used for the asignment
+
+  Author : Jean-Pierre Erasmus
+*/
 
 *{
     margin:0;
@@ -22,101 +26,109 @@ body{
     border-width:3px;
     padding:5px;    
 }
+
 h2,p{
     font-size:100%;
     font-weight:normal;
 }
+
 ul,li{
     list-style:none;
 }
+
 ul{
-    overflow:hidden;
     padding:3em;
+    overflow:hidden;
 }
-ul li a{
-    text-decoration:none;
-    color:#000;
-    background:#ffc;
-    display:block;
-    height:10em;
-    width:10em;
-    padding:1em;
-    -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
-    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-    -moz-transition:-moz-transform .15s linear;
-    -o-transition:-o-transform .15s linear;
-    -webkit-transition:-webkit-transform .15s linear;
-}
+
 ul li{
-    margin:1em;
     float:left;
-}
-ul li h2{
-    font-size:140%;
-    font-weight:bold;
-    padding-bottom:10px;
+    margin:1em;
 }
 
 ul li a{
     -webkit-transform: rotate(-6deg);
-    -o-transform: rotate(-6deg);
     -moz-transform:rotate(-6deg);
+    -o-transform: rotate(-6deg);
 }
+
+ul li h2{
+    padding-bottom:10px;
+    font-size:140%;
+    font-weight:bold;
+}
+
+ul li a{
+    color:#000;
+    text-decoration:none;
+    width:10em;
+    background: lightgoldenrodyellow;
+    display:block;
+    height:12em;
+    padding:3em;
+    -moz-transition:-moz-transform .15s linear;
+    -o-transition:-o-transform .15s linear;
+    -webkit-transition:-webkit-transform .15s linear;
+    -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+}
+
 ul li:nth-child(even) a{
     -o-transform:rotate(4deg);
-    -webkit-transform:rotate(4deg);
     -moz-transform:rotate(4deg);
+    -webkit-transform:rotate(4deg);
     position:relative;
-    top:5px;
-    background:#cfc;
+    background: aquamarine;
+    top:6px;
+    width:13em;
+    height:11em;
+    padding:2em;
 }
+
+ul li:nth-child(3n) a{
+    -webkit-transform:rotate(-3deg);
+    -o-transform:rotate(-3deg);
+    -moz-transform:rotate(-3deg);
+    position:relative;
+    background:lightskyblue;
+    top:-5px;
+    width:15em;
+    height:13em;
+}
+
 
 ul li:nth-child(4):hover a{
     -o-transform:rotate(10deg);
-    -webkit-transform:rotate(10deg);
     -moz-transform:rotate(10deg);
+    -webkit-transform:rotate(10deg);
     position:relative;
-    top:5px;
     background:orange;
+    top:5px;
 }
 
 ul li:nth-child(4) a{
     -o-transform:rotate(10deg);
-    -webkit-transform:rotate(10deg);
     -moz-transform:rotate(10deg);
+    -webkit-transform:rotate(10deg);
     position:relative;
-    top:5px;
     background:orange;
+    top:5px;
+    width:10em;
+    height:10em;
 }
 
-ul li:nth-child(3n) a{
-    -o-transform:rotate(-3deg);
-    -webkit-transform:rotate(-3deg);
-    -moz-transform:rotate(-3deg);
-    position:relative;
-    top:-5px;
-    background:lightskyblue;
-    height:15em;
-    width:15em;
-}
-ul li:nth-child(5n) a{
-    -o-transform:rotate(5deg);
-    -webkit-transform:rotate(5deg);
-    -moz-transform:rotate(5deg);
-    position:relative;
-    top:-10px;
-}
 ul li a:hover,ul li a:focus{
-    box-shadow:10px 10px 7px rgba(0,0,0,.7);
     -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
-    -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
     -webkit-transform: scale(1.25);
+    -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
     -moz-transform: scale(1.25);
-    -o-transform: scale(1.25);
     position:relative;
+    -o-transform: scale(1.25);
     z-index:5;
 }
+
 ol{text-align:center;}
 ol li{display:inline;padding-right:1em;}
 ol li a{color:#fff;}
@@ -126,8 +138,8 @@ ol li a{color:#fff;}
     width: 60px;
     height: 60px; 
     position:absolute; 
-    top:100px; 
-    left:50px; 
+    top:120px; 
+    left:70px; 
     z-index:1000; 
 }
 
@@ -136,8 +148,8 @@ ol li a{color:#fff;}
     width: 62px;
     height: 62px; 
     position:absolute; 
-    top:100px; 
-    left:50px; 
+    top:120px; 
+    left:70px; 
     box-shadow:5px 5px 3px rgba(0,0,0,.7);
     -moz-box-shadow:5px 5px 3px rgba(0,0,0,.7);
     -webkit-box-shadow: 5px 5px 3px rgba(0,0,0,.7);
@@ -145,8 +157,8 @@ ol li a{color:#fff;}
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
 }
 
 .SpinButton:active { 
@@ -154,20 +166,19 @@ ol li a{color:#fff;}
 } 
 
 .SpinButton {
-    width: 60px;
-    height: 60px; 
-
-    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, red 0%, orange 100%, maroon 95%);
-    background-image: -webkit-radial-gradient(45px 45px, circle cover, red, maroon);
-    background-image: radial-gradient(45px 45px 45deg, circle cover, red 0%, orange 100%, maroon 95%);
-
     animation-name: spin; 
     animation-duration: 3s;  
     animation-iteration-count: infinite; 
     animation-timing-function: linear;
 
-    border-width:0px;
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, red, maroon);
+    background-image: radial-gradient(45px 45px 45deg, circle cover, red 0%, orange 100%, maroon 95%);
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, red 0%, orange 100%, maroon 95%);
 
+    width: 60px;
+    height: 60px; 
+
+    border-width:0px;
     cursor:pointer;
 }
 
@@ -176,8 +187,8 @@ ol li a{color:#fff;}
 .lcdH2 {
     position: relative;
     font-family: monospace;
-    background-color: black;
     text-decoration: none;
+    background-color: black;
     color: green;
     font-size: 1.5em;
 }
@@ -185,18 +196,20 @@ ol li a{color:#fff;}
 .cursor {
     position: absolute;
     top: 0;
-    bottom: 0;
     right: 0;
-    width: 100%;
-    background: black;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    bottom: 0;
     border-left: .5em solid;
+    width: 100%;
+    box-sizing: border-box;
+    background: black;
 
-    -webkit-animation: typing 7s steps(5, end) infinite,
-        blinking 1s step-end infinite;
     animation: typing 12s steps(13, end) infinite,
         blinking 1s step-end infinite;
+	
+    -webkit-box-sizing: border-box;
+    -webkit-animation: typing 7s steps(5, end) infinite,
+        blinking 1s step-end infinite;
+
 }
 
 
@@ -225,31 +238,36 @@ ol li a{color:#fff;}
 .fontComic { 
     font-family: Comic Sans MS, Comic Sans, cursive;
 }
+
 .navyFontComic { 
     color:navy;
     font-family: Comic Sans MS, Comic Sans, cursive;
 }
+
 .blueFontComic { 
     color:blue;
     font-family: Comic Sans MS, Comic Sans, cursive;
 }
+
 .fontBrush { 
     font-family: Brush Script Std, Brush Script MT, cursive;
 }
+
 .redInput {
     color:red;
 }
+
 .screwHead { 
     box-shadow:3px 3px 2px rgba(0,0,0,.7);
     -moz-box-shadow:3px 3px 2px rgba(0,0,0,.7);
     -webkit-box-shadow: 3px 3px 1px rgba(0,0,0,.7); 
     border-radius: 50%; 
 }
+
 .darkEmbossed { 
-    color:darkslategray; 
-    text-shadow: 0px 1px 0px rgba(255,255,255,.5); 
     font-family: Impact, fantasy;
-    
+    color:darkslategray; 
+    text-shadow: 0px 1px 0px rgba(255,255,255,.5);     
 }
 
 .outputGreen { 
@@ -260,16 +278,18 @@ ol li a{color:#fff;}
 }
 
 .mainLCDGreen { 
-    border-radius: 50px; 
-    width:300px; 
     height: 290px;                  
+    width:300px; 
+    padding:30px; 
+    border-radius: 50px; 
     border-style:groove; 
     border-width: 10px;
     background-color:black; 
-    padding:30px;  
+	
     opacity: 0.8; 
     filter: alpha(opacity=80);
+	
     box-shadow:3px 3px 3px rgba(0,0,0,.7);
-    -moz-box-shadow:3px 3px 3px rgba(0,0,0,.7);
     -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,.7);
+    -moz-box-shadow:3px 3px 3px rgba(0,0,0,.7);
 }

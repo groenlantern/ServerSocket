@@ -1,6 +1,12 @@
 /**
  * 
  * Runs request and sets response
+ * Function will fetch all user entered data and build Query String
+ * Send POST request to servlet 
+ * Read servlet Response 
+ * Display Server response to user
+ * 
+ * Author: Jean-Pierre Erasmus
  */
 function sendRequest() {
     var http = new XMLHttpRequest();
@@ -21,14 +27,14 @@ function sendRequest() {
     var qryString = "serverName=" + svrname + "&portNo=" + portNo + "&eventType=" + evntpe +
             "&userPin=" + usrpin + "&deviceID=" + dvcid + "&deviceSerial=" + serial + "&deviceVersion=" + version + "&tranType=" + tranType;
 
-    //Send the proper header information along with the request
+    //Send header content type
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     //Get Response back
-    http.onreadystatechange = function () {//Call a function when the state changes.
+    http.onreadystatechange = function () {
         if (http.readyState === 4 && http.status === 200) {
             var responseText = http.responseText;
-            //Display Response Message
+            //Display Response Message in green LCD Block
             document.getElementById("responseMesg").innerHTML = responseText;
         }
     };
